@@ -91,7 +91,7 @@
     "Convenience macro for defining actions"
     [type args & body]
     `(defmethod sim/perform-action ~type [action# process#]
-       (perform-aciton action#
+       (perform-action action#
                        process#
                        (fn ~args ~@body)
                        log-skipped
