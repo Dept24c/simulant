@@ -15,7 +15,9 @@
  '[simulant.examples.trading :as trading]
  '[simulant.examples.trading-sim :as tsim])
 
-(def sim-uri "datomic:free://localhost:4334/trading-example")
+;; Figure out how to switch this to datomic cloud?
+;; (def sim-uri "datomic:free://localhost:4334/trading-example")
+(def sim-uri (str "datomic:mem://" (d/squuid)))
 (d/delete-database sim-uri)
 (d/create-database sim-uri)
 (def sim-conn (d/connect sim-uri))
@@ -80,7 +82,8 @@
    trading-test
    {:db/id (d/tempid :sim)
     :source/codebase (:db/id codebase)
-    :sim/systemURI (str "datomic:free://localhost:4334/" (System/currentTimeMillis))
+    :sim/systemURI (str "datomic:mem://" (System/currentTimeMillis))
+    ;; (str "datomic:free://localhost:4334/" (System/currentTimeMillis))
     :sim/processCount 10}))
 
 ;; action log for this sim
@@ -218,5 +221,5 @@
        :with ?action
        :in $ % ?action-type
        :where (simCompletedAt ?e ?inst)
-              (actionTime ?sim ?action-type ?action ?nsec)]
+              (actionTime ?e ?action-type ?action ?nsec)]
      simdb rules :action.type/trade)
