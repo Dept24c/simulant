@@ -37,7 +37,7 @@
 + Extends the framework in ways it was meant to be extended
 - Larger change
 - May have a ripple effect that we cannot hide from existing users
-** Introduce an orthogonal concept about processes: Causaulity
+** Introduce an orthogonal concept about processes: Causality
 *** Add an attribute to the simulant schema :process/causality
 *** Allowed values are :process.causality/independent (default) and :process.causality/dependent.
 *** Inside simulant.sim/feed-action, we check for this attribute

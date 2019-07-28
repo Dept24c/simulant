@@ -22,7 +22,7 @@
   involved in executing the overall action.
 
   In the case of things like multiple retries against a service, order
-  of action log entires may matter. Therefore, action log entries
+  of action log entries may matter. Therefore, action log entries
   logged via this library also include a sequence ID. Sequence ids
   imply a partial temporal order: all entries logged from a single
   thread will be tagged with monotonically increasing sequence IDs,

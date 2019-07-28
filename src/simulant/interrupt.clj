@@ -38,7 +38,7 @@
   (swap! state assoc agent true))
 
 (defn interrupted?
-  "Wether the agent has been interrupted."
+  "Whether the agent has been interrupted."
   [{:keys [state] :as service} agent]
   (get @state agent))
 
