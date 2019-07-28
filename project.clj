@@ -7,16 +7,16 @@
                      :comments "same as Clojure"}
   :source-paths     ["src" "examples"]
   :resource-paths   ["resources"]
-  :plugins          [[lein-marginalia "0.7.1"]]
+  :plugins          [[lein-marginalia "0.9.1"]]
   :min-lein-version "2.0.0"
   :jvm-opts         ["-Xmx2g" "-Xms2g" "-server" "-Ddatomic.objectCacheMax=128m"
                      "-Ddatomic.memoryIndexMax=256m" "-Ddatomic.memoryIndexThreshold=32m"]
-  :dependencies     [[org.clojure/clojure "1.7.0"]
+  :dependencies     [[org.clojure/clojure "1.10.1"]
                      [org.clojure/test.generative "0.5.2"]
-                     [joda-time "2.2"]
-                     [com.datomic/datomic-free "0.9.5327"
+                     [joda-time "2.10.3"]
+                     [com.datomic/datomic-free "0.9.5697"
                       :exclusions [org.clojure/clojure
                                    joda-time
                                    org.apache.httpcomponents/httpclient]]
                      [org.clojure/data.json "0.2.6"]
-                     [org.apache.httpcomponents/httpclient "4.5.1"]])
+                     [org.apache.httpcomponents/httpclient "4.5.9"]])
